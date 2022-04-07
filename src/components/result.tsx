@@ -1,32 +1,30 @@
-import Link from "next/link";
-import Router from "next/router";
-import React from "react";
+import Link from 'next/link';
+import React from 'react';
 
 const Result = ({ res }) => {
-  //   console.log("RESULT = ", res.);
+  console.log('RESULT = ', res);
 
-  const handleDetail = ({ id }) => {
-    console.log("id =======", id);
-    Router.push({
-      query: {
-        id: id,
-      },
-    });
-  };
   return (
     <>
-      <p>result</p>
       {res.map((result) => (
-        <div key={result.id}>
-          <p>{result.title}</p>
+        <div key={result.id} className="m-8 ">
+          <p className="mx-4">{result.title}</p>
+          <p className="mx-4">
+            募集期間：{result.acceptance_start_datetime.substring(0, 10)}〜
+            {result.acceptance_end_datetime.substring(0, 10)}
+          </p>
           {/* <button onClick={() => Router.push({ query: { id: result.id } })}>
             詳細
           </button> */}
-
-          <Link href={`contents/${result.id}`}>詳細</Link>
+          <div className="flex justify-end">
+            <Link href={`contents/${result.id}`}>
+              <p className=" w-1/5 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer">
+                詳細
+              </p>
+            </Link>
+          </div>
         </div>
       ))}
-      <p>end</p>
     </>
   );
 };
