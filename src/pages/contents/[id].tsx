@@ -1,27 +1,31 @@
-import React from "react";
-import { useRouter } from "next/router";
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
-import { getData } from "../../api/getData";
-import Link from "next/link";
+import { GetServerSideProps } from 'next';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React from 'react';
+import { getData } from '../../api/getData';
 
 const Detail = ({ detail }) => {
   const router = useRouter();
   const { id } = router.query;
   return (
-    <>
-      <Link href="/">戻る</Link>
+    <div className=" mx-auto w-4/5">
+      <Link href="/">
+        <p className="m-2 w-1/6 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer">
+          戻る
+        </p>
+      </Link>
       <h1>{detail.result[0].title}</h1>
       <p dangerouslySetInnerHTML={{ __html: detail.result[0].detail }}></p>
-    </>
+    </div>
   );
 };
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const serverid = params.id;
-  console.log("serverId = ", serverid);
+  console.log('serverId = ', serverid);
   const url = `https://api.jgrants-portal.go.jp/exp/v1/public/subsidies/id/${serverid}`;
   const res = await getData(url);
   console.log(res);
-  if (true) {
+  if (url) {
     return {
       props: {
         detail: res,
@@ -30,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   } else {
     return {
       props: {
-        // keyword: "",
+        detail: null,
       },
     };
   }

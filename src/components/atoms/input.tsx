@@ -88,8 +88,8 @@ export const Input = () => {
         </select>
         <br />
         <select {...register('acceptance')}>
-          <option value={0}>期間内絞り込みあり</option>
-          <option value={1}>期間内絞り込みなし</option>
+          <option value={0}>期間内絞り込みなし</option>
+          <option value={1}>期間内絞り込みあり</option>
         </select>
         <button type="submit">検索</button>
       </form>

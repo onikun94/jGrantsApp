@@ -1,65 +1,50 @@
-import { GetServerSideProps, GetStaticProps } from "next";
-import React from "react";
-import { getData } from "../api/getData";
-import { Input } from "../components/atoms/input";
-import Result from "../components/result";
+import { GetServerSideProps } from 'next';
+import React from 'react';
+import { getData } from '../api/getData';
+import Card from '../components/atoms/Card';
+import { Input } from '../components/atoms/Input';
+import Layout from '../components/Layout';
+import Result from '../components/result';
 
 const TopPage = ({ result }) => {
   //   const handleLog = () => {
   //     console.log("test");
   //   };
   //   console.log(result);
-  console.log("TopPageRes = ", result);
+  console.log('TopPageRes = ', result);
   return (
-    <>
-      <p>hello</p>
-      <p>hello</p>
-      <Input />
+    <Layout>
+      <h1 className="m-2">補助金を探す</h1>
+      <Card>
+        <Input />
+      </Card>
       {result ? <Result res={result.result} /> : <Result res={[]} />}
-      {/* <Result res={res.result} /> */}
-      {/* <p>{keyword}</p>
-      <p>{sort}</p>
-      <p>{order}</p>
-      <p>{acceptance}</p> */}
-    </>
+    </Layout>
   );
 };
-
-// export const getStaticProps: GetStaticProps = async () => {
-//   const url = `https://api.jgrants-portal.go.jp/exp/v1/public/subsidies?keyword=補助金&sort=created_date&order=DESC&acceptance=1&target_area_search=静岡県`;
-//   const result = await getData(url);
-//   return {
-//     props: { result: result },
-//   };
-// };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const keyword = context.query.keyword;
   const sort = context.query.sort;
   const order = context.query.order;
   const acceptance = context.query.acceptance;
-  const url = `https://api.jgrants-portal.go.jp/exp/v1/public/subsidies?keyword=${keyword}&sort=${sort}&order=${order}&acceptance=${acceptance}`;
-  const res = await getData(url);
-  //   console.log("res = ", res.result);
-  //   console.log("url = ", url);
-  //   console.log("keyword!!!!!!=", keyword);
-  //   console.log("sort = ", sort);
-  //   console.log("order = ", order);
-  //   console.log("acceptance = ", acceptance);
+  const industry = context.query.industry;
+  const employ = context.query.employ;
+  let url: string;
   if (keyword) {
+    url = `https://api.jgrants-portal.go.jp/exp/v1/public/subsidies?keyword=${keyword}&sort=${sort}&order=${order}&acceptance=${acceptance}&industry=${industry}&target_number_of_employees=${employ}`;
+  }
+  if (url) {
+    const res = await getData(url);
     return {
       props: {
-        // keyword: keyword,
-        // sort: sort,
-        // order: order,
-        // acceptance: acceptance,
         result: res,
       },
     };
   } else {
     return {
       props: {
-        // keyword: "",
+        result: { result: [] },
       },
     };
   }
