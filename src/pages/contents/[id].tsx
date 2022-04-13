@@ -10,9 +10,14 @@ const Detail = ({ detail }) => {
   return (
     <div className=" mx-auto w-4/5">
       <Link href="/">
-        <p className="m-2 w-1/6 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer">
+        <a className="m-2 w-1/6 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer">
           戻る
-        </p>
+        </a>
+      </Link>
+      <Link href="/form">
+        <a className="m-2 w-1/6 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer">
+          問い合わせ
+        </a>
       </Link>
       <h1>{detail.result[0].title}</h1>
       <p dangerouslySetInnerHTML={{ __html: detail.result[0].detail }}></p>

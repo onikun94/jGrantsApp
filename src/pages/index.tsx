@@ -11,7 +11,6 @@ const TopPage = ({ result }) => {
   //     console.log("test");
   //   };
   //   console.log(result);
-  console.log('TopPageRes = ', result);
   return (
     <Layout>
       <h1 className="m-2">補助金を探す</h1>
