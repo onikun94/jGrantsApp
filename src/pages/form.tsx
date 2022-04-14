@@ -16,14 +16,13 @@ const Form = () => {
   const form = useRef();
   const getTitle = useRecoilValue(subsidyState);
   const [titleValue, setTitleValue] = useState(`${getTitle}について`);
-  console.log('form = ', form);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    emailjs.sendForm('onikun94', 'jgrants', form.current, '6M_f2dfHKPBVoj7IA').then(
+    emailjs.sendForm(serviceID, templateID, form.current, publicKey).then(
       (result) => {
-        console.log('result = ', result.text);
+        console.log(result.text);
       },
       (error) => {
         console.log(error.text);
