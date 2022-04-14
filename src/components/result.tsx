@@ -18,9 +18,9 @@ const Result = ({ res }) => {
           </button> */}
           <div className="flex justify-end">
             <Link href={`contents/${result.id}`}>
-              <p className=" w-1/5 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer">
+              <a className=" w-1/5 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer">
                 詳細
-              </p>
+              </a>
             </Link>
           </div>
         </div>
