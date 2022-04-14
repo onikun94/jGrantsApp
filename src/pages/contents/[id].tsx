@@ -1,25 +1,35 @@
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useSetRecoilState } from 'recoil';
 import { getData } from '../../api/getData';
+import { subsidyState } from '../../recoil/atoms/subsidy';
 
 const Detail = ({ detail }) => {
   const router = useRouter();
+  const setTitle = useSetRecoilState(subsidyState);
   const { id } = router.query;
+
+  const handleTitle = useCallback(() => {
+    setTitle(detail.result[0].title);
+  }, []);
   return (
-    <div className=" mx-auto w-4/5">
+    <div className=" mx-auto my-6 w-4/5">
       <Link href="/">
         <a className="m-2 w-1/6 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer">
           戻る
         </a>
       </Link>
       <Link href="/form">
-        <a className="m-2 w-1/6 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer">
+        <a
+          onClick={handleTitle}
+          className="m-2 w-1/6 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer"
+        >
           問い合わせ
         </a>
       </Link>
-      <h1>{detail.result[0].title}</h1>
+      <h1 className="my-2">{detail.result[0].title}</h1>
       <p dangerouslySetInnerHTML={{ __html: detail.result[0].detail }}></p>
     </div>
   );
