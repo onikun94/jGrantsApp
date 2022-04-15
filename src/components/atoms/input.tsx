@@ -5,6 +5,7 @@ type Inputs = {
   keyword: string;
   sort: string;
   order: string;
+  prefecture: string;
   industry: string;
   employ: string;
   acceptance: number;
@@ -26,6 +27,7 @@ export const Input = () => {
         sort: data.sort,
         order: data.order,
         acceptance: data.acceptance,
+        prefecture: data.prefecture,
         industry: data.industry,
         employ: data.employ,
       },
@@ -38,6 +40,19 @@ export const Input = () => {
         <input {...register('keyword', { required: true })} placeholder="検索語" />
         {errors.keyword && <span className="text-rose-500">This field is required</span>}
         <br />
+        <label>地域：</label>
+        <select {...register('prefecture')}>
+          <option value="北海道">北海道</option>
+          <option value="青森県">青森</option>
+          <option value="岩手県">岩手県</option>
+          <option value="宮城県">宮城県</option>
+          <option value="秋田県">秋田県</option>
+          <option value="山形県">山形県</option>
+          <option value="福島県">福島県</option>
+          <option value="東京都">東京都</option>
+        </select>
+        <br />
+        <label>業種：</label>
         <select {...register('industry')}>
           <option value="">指定なし</option>
           <option value="農業，林業">農業，林業</option>
@@ -64,6 +79,7 @@ export const Input = () => {
           <option value="分類不能の産業">分類不能の産業</option>
         </select>
         <br />
+        <label>従業員数：</label>
         <select {...register('employ')}>
           <option value="従業員の制約なし">従業員の制約なし</option>
           <option value="5名以下">5名以下</option>
@@ -76,6 +92,7 @@ export const Input = () => {
         </select>
         <br />
 
+        <label>並び替え：</label>
         <select {...register('sort')}>
           <option value="created_date">作成日</option>
           <option value="acceptance_start_datetime">募集開始日</option>
