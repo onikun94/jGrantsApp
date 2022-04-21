@@ -1,4 +1,5 @@
 import { GetServerSideProps } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useCallback } from 'react';
@@ -17,20 +18,20 @@ const Detail = ({ detail }) => {
   return (
     <div className=" mx-auto my-6 w-4/5">
       <Link href="/">
-        <a className="m-2 w-1/6 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer">
+        <a className=" block m-2 w-1/6 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer">
           戻る
         </a>
       </Link>
-      <Link href="/form">
-        <a
-          onClick={handleTitle}
-          className="m-2 w-1/6 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer"
-        >
-          問い合わせ
-        </a>
-      </Link>
-      <h1 className="my-2">{detail.result[0].title}</h1>
+      <h1 className="my-4">{detail.result[0].title}</h1>
       <p dangerouslySetInnerHTML={{ __html: detail.result[0].detail }}></p>
+      <div className="text-center m-2">
+        <Image src="/contact1.png" width="300" height="61" objectFit="contain" />
+        <Link href="/form">
+          <a onClick={handleTitle} className=" block m-2 cursor-pointer">
+            <Image src="/contact2.png" width="205" height="44" objectFit="contain" />
+          </a>
+        </Link>
+      </div>
     </div>
   );
 };

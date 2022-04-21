@@ -35,12 +35,10 @@ export const Input = () => {
   };
   console.log('watch', watch('keyword'));
   return (
-    <>
+    <div className="p-4">
       <form onSubmit={handleSubmit(onSubmit)}>
         <input {...register('keyword', { required: true })} placeholder="検索語" />
         {errors.keyword && <span className="text-rose-500">This field is required</span>}
-        <br />
-        <label>地域：</label>
         <select {...register('prefecture')}>
           <option value="北海道">北海道</option>
           <option value="青森県">青森</option>
@@ -51,10 +49,8 @@ export const Input = () => {
           <option value="福島県">福島県</option>
           <option value="東京都">東京都</option>
         </select>
-        <br />
-        <label>業種：</label>
         <select {...register('industry')}>
-          <option value="">指定なし</option>
+          <option value="">業種を指定してください</option>
           <option value="農業，林業">農業，林業</option>
           <option value="漁業">漁業</option>
           <option value="鉱業，採石業，砂利採取業">鉱業，採石業，砂利採取業</option>
@@ -78,8 +74,7 @@ export const Input = () => {
           <option value="公務（他に分類されるものを除く）">公務（他に分類されるものを除く）</option>
           <option value="分類不能の産業">分類不能の産業</option>
         </select>
-        <br />
-        <label>従業員数：</label>
+        {/* <label>従業員数：</label>
         <select {...register('employ')}>
           <option value="従業員の制約なし">従業員の制約なし</option>
           <option value="5名以下">5名以下</option>
@@ -90,9 +85,9 @@ export const Input = () => {
           <option value="900名以下">900名以下</option>
           <option value="901名以上">901名以上</option>
         </select>
-        <br />
+        <br /> */}
 
-        <label>並び替え：</label>
+        {/* <label>並び替え：</label>
         <select {...register('sort')}>
           <option value="created_date">作成日</option>
           <option value="acceptance_start_datetime">募集開始日</option>
@@ -103,13 +98,13 @@ export const Input = () => {
           <option value="ASC">昇順</option>
           <option value="DESC">降順</option>
         </select>
-        <br />
+        <br /> */}
         <select {...register('acceptance')}>
           <option value={0}>期間内絞り込みなし</option>
           <option value={1}>期間内絞り込みあり</option>
         </select>
         <button type="submit">検索</button>
       </form>
-    </>
+    </div>
   );
 };

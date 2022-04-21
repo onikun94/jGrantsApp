@@ -4,15 +4,26 @@
 
 @layer base {
   body {
-    @apply leading-relaxed tracking-wider font-mplus;
+    @apply leading-relaxed tracking-wider font-mplus bg-zinc-100;
   }
 
   h1 {
     @apply text-2xl font-medium;
   }
 
+  h2 {
+    @apply text-xl;
+  }
+
   select {
-    @apply border  rounded-xl m-1 p-1;
+    @apply border rounded m-2 p-2;
+  }
+
+  b {
+    @apply text-xl  m-2;
+  }
+  p {
+    @apply m-2;
   }
   /*
   option: {
@@ -20,9 +31,9 @@
   }
 */
   input {
-    @apply border m-1 p-1;
+    @apply border rounded m-2 p-2;
   }
   button {
-    @apply border rounded-md  py-1 px-2;
+    @apply border rounded-md mx-2 py-2 px-4;
   }
 }
