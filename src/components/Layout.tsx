@@ -5,7 +5,7 @@ type LayoutPropsType = {
 };
 
 const Layout: VFC<LayoutPropsType> = ({ children }) => {
-  return <div className="mx-auto w-3/5">{children}</div>;
+  return <div className=" p-12 w-max h-auto ">{children}</div>;
 };
 
 export default Layout;

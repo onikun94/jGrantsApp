@@ -3,7 +3,7 @@ type CardPropsType = {
   children?: ReactNode;
 };
 const Card: VFC<CardPropsType> = ({ children }) => {
-  return <div className="m-2  text-center rounded-xl shadow ">{children}</div>;
+  return <div className="rounded-xl shadow   ">{children}</div>;
 };
 
 export default Card;
