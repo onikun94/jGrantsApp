@@ -6,8 +6,15 @@ import Card from '../components/atoms/Card';
 import { Input } from '../components/atoms/Input';
 import Layout from '../components/Layout';
 import Result from '../components/result';
+import { SubsidyType } from '../types/subsidy';
 
-const TopPage = ({ result }) => {
+type Props = {
+  result: SubsidyType[];
+  flag: boolean;
+};
+
+const TopPage: React.VFC<Props> = ({ result, flag }) => {
+  console.log('reulsa  = ', flag);
   return (
     <Layout>
       <Image src="/expact1.png" width="192" height="50" objectFit="contain" alt="icon" />
@@ -19,7 +26,15 @@ const TopPage = ({ result }) => {
           <Input />
         </div>
       </Card>
-      {result ? <Result res={result.result} /> : <Result res={[]} />}
+      {result ? (
+        flag ? (
+          <Result res={result.slice(0, 3)} />
+        ) : (
+          <Result res={result} />
+        )
+      ) : (
+        <Result res={[]} />
+      )}
     </Layout>
   );
 };
@@ -32,21 +47,28 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const industry = context.query.industry;
   const employ = context.query.employ;
   let url: string;
+  let initialFlag;
   if (keyword) {
     url = `https://api.jgrants-portal.go.jp/exp/v1/public/subsidies?keyword=${keyword}&sort=created_date&order=DESC&acceptance=${acceptance}&industry=${industry}&target_number_of_employees=従業員の制約なし`;
+    initialFlag = false;
+  } else {
+    url = `https://api.jgrants-portal.go.jp/exp/v1/public/subsidies?keyword="事業"&sort=created_date&order=DESC&acceptance=1&target_number_of_employees=従業員の制約なし`;
+    initialFlag = true;
   }
+
   if (url) {
     const res = await getData(url);
     return {
       props: {
-        result: res,
+        result: res.result,
+        flag: initialFlag,
       },
     };
   } else {
-    // const res = await getData(url);
     return {
       props: {
         result: { result: [] },
+        flag: false,
       },
     };
   }
