@@ -1,0 +1,26 @@
+[
+  { "indValue": "", "indName": "業種を選択してください" },
+  { "indValue": "農業，林業", "indName": "農業，林業" },
+  { "indValue": "漁業", "indName": "漁業" },
+  { "indValue": "鉱業，採石業，砂利採取業", "indName": "鉱業，採石業，砂利採取業" },
+  { "indValue": "建設業", "indName": "建設業" },
+  { "indValue": "製造業", "indName": "製造業" },
+  { "indValue": "電気・ガス・熱供給・水道業", "indName": "電気・ガス・熱供給・水道業" },
+  { "indValue": "情報通信業", "indName": "情報通信業" },
+  { "indValue": "運輸業，郵便業", "indName": "運輸業，郵便業" },
+  { "indValue": "卸売業，小売業", "indName": "卸売業，小売業" },
+  { "indValue": "金融業，保険業", "indName": "金融業，保険業" },
+  { "indValue": "不動産業，物品賃貸業", "indName": "不動産業，物品賃貸業" },
+  { "indValue": "学術研究，専門・技術サービス業", "indName": "学術研究，専門・技術サービス業" },
+  { "indValue": "宿泊業，飲食サービス業", "indName": "宿泊業，飲食サービス業" },
+  { "indValue": "生活関連サービス業，娯楽業", "indName": "生活関連サービス業，娯楽業" },
+  { "indValue": "教育，学習支援業", "indName": "教育，学習支援業" },
+  { "indValue": "医療，福祉", "indName": "医療，福祉" },
+  { "indValue": "複合サービス事業", "indName": "複合サービス事業" },
+  {
+    "indValue": "サービス業（他に分類されないもの）",
+    "indName": "サービス業（他に分類されないもの）"
+  },
+  { "indValue": "公務（他に分類されるものを除く）", "indName": "公務（他に分類されるものを除く）" },
+  { "indValue": "分類不能の産業", "indName": "分類不能の産業" }
+]
