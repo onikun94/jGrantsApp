@@ -1,0 +1,9 @@
+[
+  { "Skey": 0, "SName": "補助金" },
+  { "Skey": 1, "SName": "助成金" },
+  { "Skey": 2, "SName": "令和" },
+  { "Skey": 3, "SName": "事業" },
+  { "Skey": 4, "SName": "イノベーション" },
+  { "Skey": 5, "SName": "DX" },
+  { "Skey": 6, "SName": "実証実験" }
+]

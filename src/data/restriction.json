@@ -1,0 +1,4 @@
+[
+  { "resValue": 0, "resName": "期間内絞り込みなし" },
+  { "resValue": 1, "resName": "期間内絞り込みあり" }
+]
