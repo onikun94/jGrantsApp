@@ -27,35 +27,48 @@ export const Input = () => {
     Router.push({
       query: {
         keyword: data.keyword,
-        sort: data.sort,
-        order: data.order,
         acceptance: data.acceptance,
         prefecture: data.prefecture,
         industry: data.industry,
-        employ: data.employ,
       },
     });
   };
-  console.log('watch', watch('keyword'));
   return (
-    <div className="p-4 m-8">
+    <div className="p-4 mb-8">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register('keyword', { required: true })} placeholder="検索語" />
+        <input
+          id="inputText"
+          type="text"
+          {...register('keyword', { required: true })}
+          placeholder="検索語"
+        />
         {errors.keyword && <span className="text-rose-500">This field is required</span>}
         <select {...register('prefecture')}>
           {prefData.map((data) => {
-            return <option value={data.prefValue}>{data.prefName}</option>;
+            return (
+              <option key={data.prefValue} value={data.prefValue}>
+                {data.prefName}
+              </option>
+            );
           })}
         </select>
         <select {...register('industry')}>
           {indData.map((data) => {
-            return <option value={data.indValue}>{data.indName}</option>;
+            return (
+              <option key={data.indValue} value={data.indValue}>
+                {data.indName}
+              </option>
+            );
           })}
         </select>
 
         <select {...register('acceptance')}>
           {resData.map((data) => {
-            return <option value={data.resValue}>{data.resName}</option>;
+            return (
+              <option key={data.resValue} value={data.resValue}>
+                {data.resName}
+              </option>
+            );
           })}
         </select>
         <button type="submit">検索</button>
