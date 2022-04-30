@@ -11,7 +11,7 @@ type CardPropsType = {
   bgColor?: bgColorType;
   children?: ReactNode;
 };
-const Card: VFC<CardPropsType> = ({ round = 'rounded-sm', bgColor = 'bg-white', children }) => {
+const Card: VFC<CardPropsType> = ({ round = 'rounded-sm', bgColor, children }) => {
   return <div className={round + ' ' + bgColor + ' ' + 'shadow'}>{children}</div>;
 };
 
