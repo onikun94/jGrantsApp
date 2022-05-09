@@ -6,3 +6,10 @@ export const subsidyState = atom({
     title: '',
   },
 });
+
+export const searchWordState = atom({
+  key: 'searchWordState',
+  default: {
+    searchWord: '',
+  },
+});
