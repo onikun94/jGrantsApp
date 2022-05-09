@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
       mplus: ['M\\ PLUS\\ Rounded\\ 1c'],
+      roboto: ['Roboto'],
       // M+PLUS+Rounded+1c
     },
     extend: {},
