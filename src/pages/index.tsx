@@ -1,11 +1,13 @@
-import { GetServerSideProps } from 'next';
-import Image from 'next/image';
+import { GetServerSideProps, NextPage } from 'next';
 import React from 'react';
 import { getData } from '../api/getData';
 import Card from '../components/atoms/Card';
-import { Input } from '../components/atoms/Input';
+import { Heading } from '../components/atoms/Heading';
+import { Input } from '../components/Input';
 import Layout from '../components/Layout';
+import { BorderHeading } from '../components/molecules/BorderHeading';
 import Result from '../components/result';
+import { Suggest } from '../components/Suggest';
 import { SubsidyType } from '../types/subsidy';
 
 type Props = {
@@ -13,24 +15,45 @@ type Props = {
   flag: boolean;
 };
 
-const TopPage: React.VFC<Props> = ({ result, flag }) => {
+const TopPage: NextPage<Props> = ({ result, flag }) => {
   console.log('reulsa  = ', flag);
   return (
     <Layout>
-      <Image src="/expact1.png" width="192" height="50" objectFit="contain" alt="icon" />
-      <h1 className="m-2 text-2xl">補助金を探す</h1>
-      <h2 className="m-4">検索語・対象エリア・業種を選択してください</h2>
-
-      <Card>
+      <Heading heading="補助金を探す" textSize="text-2xl" marginY="my-4" weight="font-bold" />
+      <BorderHeading
+        borderWeight="border-l-4"
+        borderColor="border-l-gray-500"
+        heading="検索語・対象エリア・業種を選択してください"
+        textSize="text-xl"
+      />
+      <Card round="rounded-xl" bgColor="bg-white">
         <div className="text-center">
           <Input />
         </div>
       </Card>
+      <Heading heading="おすすめ検索ワード" textSize="text-md" marginY="my-1" />
+      <Suggest />
       {result ? (
         flag ? (
-          <Result res={result.slice(0, 3)} />
+          <>
+            <BorderHeading
+              borderWeight="border-l-4"
+              borderColor="border-l-gray-600"
+              heading="最新情報"
+              textSize="text-xl"
+            />
+            <Result res={result.slice(0, 3)} />
+          </>
         ) : (
-          <Result res={result} />
+          <>
+            <BorderHeading
+              borderWeight="border-l-4"
+              borderColor="border-l-blue-500"
+              heading="検索結果"
+              textSize="text-xl"
+            />
+            <Result res={result} />
+          </>
         )
       ) : (
         <Result res={[]} />
