@@ -1,4 +1,5 @@
 import emailjs from '@emailjs/browser';
+import Link from 'next/link';
 import React, { useRef, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import Card from '../components/atoms/Card';
@@ -36,9 +37,14 @@ const Form = () => {
 
   return (
     <Layout>
+      <Link href="/">
+        <a className="m-2 w-1/6 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer">
+          戻る
+        </a>
+      </Link>
       <h1 className="m-2">お問い合わせ</h1>
       <Card>
-        <form ref={form} onSubmit={sendEmail} className="mx-2">
+        <form ref={form} onSubmit={sendEmail} className="m-2 p-4">
           <label>
             名前
             <input type="text" name="user_name" />
@@ -56,10 +62,12 @@ const Form = () => {
           <br />
           <label>
             内容
-            <textarea name="message" />
+            <textarea className="border" name="message" />
           </label>
           <br />
-          <button type="submit" value="Send" />
+          <button className="m-2" type="submit" value="Send">
+            提出
+          </button>
         </form>
       </Card>
     </Layout>
