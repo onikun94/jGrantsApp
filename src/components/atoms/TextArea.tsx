@@ -1,7 +1,7 @@
 import React from 'react';
 
 type TextAreaPropsType = {
-  name: string;
+  name?: string;
 };
 
 export const TextArea: React.VFC<TextAreaPropsType> = ({ name }) => {

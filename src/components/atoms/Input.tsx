@@ -6,7 +6,7 @@ type InputPropsType = {
   onChange?: () => void;
   value?: string;
   placeholder?: string;
-  name: string;
+  name?: string;
 };
 
 export const Input: React.VFC<InputPropsType> = ({
