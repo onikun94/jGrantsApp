@@ -1,10 +1,11 @@
 import React, { ReactNode } from 'react';
+import { UseFormRegisterReturn } from 'react-hook-form';
 
 type SelectPropsType = {
   children: ReactNode;
-  register: any;
+  register: UseFormRegisterReturn;
   name: string;
 };
-export const Select: React.VFC<SelectPropsType> = ({ children, register, name }) => {
-  return <select {...register(name)}>{children}</select>;
+export const Select: React.VFC<SelectPropsType> = ({ children, register }) => {
+  return <select {...register}>{children}</select>;
 };
