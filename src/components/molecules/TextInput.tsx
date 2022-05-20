@@ -7,7 +7,8 @@ type TextInputPropsType = {
   inputType: string;
   onChange?: () => void;
   value?: string;
-  inputName: string;
+  inputName?: string;
+  register?: any;
 };
 export const TextInput: React.VFC<TextInputPropsType> = ({
   name,
@@ -15,8 +16,21 @@ export const TextInput: React.VFC<TextInputPropsType> = ({
   onChange,
   value,
   inputName,
+  register,
 }) => {
-  return (
+  return register ? (
+    <div className="py-2">
+      <Label name={name} />
+      <Input
+        type={inputType}
+        id={name}
+        onChange={onChange}
+        value={value}
+        name={inputName}
+        register={register}
+      />
+    </div>
+  ) : (
     <div className="py-2">
       <Label name={name} />
       <Input type={inputType} id={name} onChange={onChange} value={value} name={inputName} />
