@@ -5,7 +5,7 @@ type TextDataPropsType = {
   forms: {
     formType: string;
     formName: string;
-    inputName: string;
+    inputName?: string;
     formChange?: () => void;
     formValue?: string;
   }[];
