@@ -3,11 +3,12 @@ import { Input } from '../atoms/Input';
 import { Label } from '../atoms/Label';
 
 type TextInputPropsType = {
-  name: string;
+  name?: string;
   inputType: string;
   onChange?: () => void;
   value?: string;
   inputName?: string;
+  placeholder?: string;
   register?: any;
 };
 export const TextInput: React.VFC<TextInputPropsType> = ({
@@ -16,11 +17,11 @@ export const TextInput: React.VFC<TextInputPropsType> = ({
   onChange,
   value,
   inputName,
+  placeholder,
   register,
 }) => {
   return register ? (
-    <div className="py-2">
-      <Label name={name} />
+    <div className="py-2  inline-block">
       <Input
         type={inputType}
         id={name}
@@ -28,10 +29,11 @@ export const TextInput: React.VFC<TextInputPropsType> = ({
         value={value}
         name={inputName}
         register={register}
+        placeholder={placeholder}
       />
     </div>
   ) : (
-    <div className="py-2">
+    <div className="py-2 inline-block">
       <Label name={name} />
       <Input type={inputType} id={name} onChange={onChange} value={value} name={inputName} />
     </div>
