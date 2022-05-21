@@ -2,7 +2,7 @@ import React from 'react';
 import { Selector } from '../molecules/Selector';
 //1つ1つのデータ
 type selectData = {
-  value: string;
+  value: string | number;
   name: string;
 };
 //選択肢のデータ
@@ -16,7 +16,11 @@ type allData = {
   register: any;
 };
 export type SelectAreaPropsType = {
-  selectData: { key: string; regName: string; selectData: { name: string; value: string }[] }[];
+  selectData: {
+    key: string;
+    regName: string;
+    selectData: { name: string; value: string | number }[];
+  }[];
   register: any;
 };
 

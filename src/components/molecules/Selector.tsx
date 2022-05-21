@@ -1,7 +1,7 @@
 import React from 'react';
 
 export type SelectorPropsType = {
-  selects: { value: string; name: string }[];
+  selects: { value: string | number; name: string }[];
   register: any;
 };
 
