@@ -1,19 +1,54 @@
 import React from 'react';
 import { Button } from '../atoms/Button';
+import Card from '../atoms/Card';
+import { Heading } from '../atoms/Heading';
+import { BorderHeading } from '../molecules/BorderHeading';
 import { TextInput } from '../molecules/TextInput';
 import { SelectArea } from '../organisms/SelectArea';
+import { Suggest } from '../Suggest';
 
 type FormPropsType = {
   onSubmit: (e) => any;
-  selectData: { key: string; regName: string; selectData: { name: string; value: string }[] }[];
+  borderHeading: string;
+  recoHeading: string;
+  selectData: {
+    key: string;
+    regName: string;
+    selectData: { name: string; value: string | number }[];
+  }[];
   register: any;
 };
-export const SearchCard: React.FC<FormPropsType> = ({ onSubmit, selectData, register }) => {
+export const SearchCard: React.FC<FormPropsType> = ({
+  onSubmit,
+  borderHeading,
+  recoHeading,
+  selectData,
+  register,
+}) => {
   return (
-    <form onSubmit={onSubmit}>
-      <TextInput name="test" inputType="text" register={register('keyword')} />
-      <SelectArea selectData={selectData} register={register} />
-      <Button name="検索" />
-    </form>
+    <>
+      <BorderHeading
+        borderWeight="border-l-4"
+        borderColor="border-l-gray-500"
+        heading={borderHeading}
+        textSize="text-xl"
+      />
+      <Card bgColor="bg-white" round="rounded-xl">
+        <div className="p-4 mb-8">
+          <form onSubmit={onSubmit}>
+            <TextInput
+              name="inputText"
+              inputType="text"
+              placeholder="検索語"
+              register={register('keyword')}
+            />
+            <SelectArea selectData={selectData} register={register} />
+            <Button name="検索" />
+          </form>
+        </div>
+      </Card>
+      <Heading heading={recoHeading} textSize="text-md" marginY="my-1" />
+      <Suggest />
+    </>
   );
 };
