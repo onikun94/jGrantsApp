@@ -11,6 +11,7 @@ export const Suggest: React.VFC = () => {
       {SugData.map((data) => {
         return (
           <div
+            key={data.Skey}
             onClick={() => handleInsertWord(data.SName)}
             className="  m-2 p-4 bg-white  text-center rounded-xl cursor-pointer "
           >
