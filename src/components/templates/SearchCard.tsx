@@ -5,10 +5,11 @@ import { Heading } from '../atoms/Heading';
 import { BorderHeading } from '../molecules/BorderHeading';
 import { TextInput } from '../molecules/TextInput';
 import { SelectArea } from '../organisms/SelectArea';
-import { Suggest } from '../Suggest';
+import { suggest, SuggestData } from '../organisms/SuggestData';
 
 type FormPropsType = {
   onSubmit: (e) => any;
+  SugData: suggest[];
   borderHeading: string;
   recoHeading: string;
   selectData: {
@@ -20,6 +21,7 @@ type FormPropsType = {
 };
 export const SearchCard: React.FC<FormPropsType> = ({
   onSubmit,
+  SugData,
   borderHeading,
   recoHeading,
   selectData,
@@ -48,7 +50,7 @@ export const SearchCard: React.FC<FormPropsType> = ({
         </div>
       </Card>
       <Heading heading={recoHeading} textSize="text-md" marginY="my-1" />
-      <Suggest />
+      <SuggestData sgData={SugData} />
     </>
   );
 };
