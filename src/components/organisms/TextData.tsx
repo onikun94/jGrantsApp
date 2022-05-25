@@ -14,16 +14,26 @@ type TextDataPropsType = {
 export const TextData: React.VFC<TextDataPropsType> = ({ forms }) => {
   return (
     <>
-      {forms.map((f) => (
-        <TextInput
-          key={f.formName}
-          inputType={f.formType}
-          name={f.formName}
-          onChange={f.formChange}
-          value={f.formValue}
-          inputName={f.inputName}
-        />
-      ))}
+      {forms.map((f) =>
+        f.formValue !== undefined ? (
+          <TextInput
+            key={f.formName}
+            inputType={f.formType}
+            name={f.formName}
+            onChange={f.formChange}
+            value={f.formValue}
+            inputName={f.inputName}
+          />
+        ) : (
+          <TextInput
+            key={f.formName}
+            inputType={f.formType}
+            name={f.formName}
+            value={''}
+            inputName={f.inputName}
+          />
+        ),
+      )}
     </>
   );
 };
