@@ -10,13 +10,9 @@ type FormPropsType = {
 };
 
 const Form = () => {
-  // const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID;
-  // const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
-  // const publicKey = process.env.NEXT__PUBLIC_KEY;
-  // console.log('serviceID = ', serviceID);
-  const serviceID = 'onikun94';
-  const templateID = 'jgrants';
-  const publicKey = '6M_f2dfHKPBVoj7IA';
+  const serviceID = process.env.NEXT_PUBLIC_SERVICEID;
+  const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+  const publicKey = process.env.NEXT_PUBLIC_KEY;
 
   const form = useRef();
   const getTitle = useRecoilValue(subsidyState);
