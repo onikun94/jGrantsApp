@@ -1,20 +1,6 @@
 import React from 'react';
 import { Selector } from '../molecules/Selector';
-//1つ1つのデータ
-type selectData = {
-  value: string | number;
-  name: string;
-};
-//選択肢のデータ
-type selectorData = {
-  key: string;
-  value: selectData[];
-};
-//すべての選択肢のデータ
-type allData = {
-  all: selectorData[];
-  register: any;
-};
+
 export type SelectAreaPropsType = {
   selectData: {
     key: string;
