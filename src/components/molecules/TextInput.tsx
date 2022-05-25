@@ -33,7 +33,7 @@ export const TextInput: React.VFC<TextInputPropsType> = ({
       />
     </div>
   ) : (
-    <div className="py-2 inline-block">
+    <div className="py-2 ">
       <Label name={name} />
       <Input type={inputType} id={name} onChange={onChange} value={value} name={inputName} />
     </div>
