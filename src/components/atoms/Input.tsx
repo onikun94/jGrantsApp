@@ -8,7 +8,6 @@ type InputPropsType = {
   value?: string;
   placeholder?: string;
   name?: string;
-  // register: UseFormRegister<FormType>;
   register?: UseFormRegisterReturn;
 };
 
