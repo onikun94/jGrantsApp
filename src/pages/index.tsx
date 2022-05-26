@@ -1,13 +1,14 @@
 import { GetServerSideProps, NextPage } from 'next';
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import { getData } from '../api/getData';
-import Card from '../components/atoms/Card';
-import { Heading } from '../components/atoms/Heading';
-import { Input } from '../components/Input';
 import Layout from '../components/Layout';
-import { BorderHeading } from '../components/molecules/BorderHeading';
-import Result from '../components/result';
-import { Suggest } from '../components/Suggest';
+import { SearchPage } from '../components/templates/SearchPage';
+import indData from '../data/industry.json';
+import prefData from '../data/prefecture.json';
+import restData from '../data/restriction.json';
+import sugData from '../data/suggest.json';
+import { doHandleSubmit } from '../lib/handler';
 import { SubsidyType } from '../types/subsidy';
 
 type Props = {
@@ -16,59 +17,39 @@ type Props = {
 };
 
 const TopPage: NextPage<Props> = ({ result, flag }) => {
-  console.log('reulsa  = ', flag);
+  const wrapSubmit = (data) => {
+    doHandleSubmit(data);
+  };
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const selectData = [
+    { key: 'ind', regName: 'industry', selectData: indData },
+    { key: 'pre', regName: 'prefecture', selectData: prefData },
+    { key: 'rest', regName: 'restriction', selectData: restData },
+  ];
   return (
     <Layout>
-      <Heading heading="補助金を探す" textSize="text-2xl" marginY="my-4" weight="font-bold" />
-      <BorderHeading
-        borderWeight="border-l-4"
-        borderColor="border-l-gray-500"
-        heading="検索語・対象エリア・業種を選択してください"
-        textSize="text-xl"
+      <SearchPage
+        submit={handleSubmit(wrapSubmit)}
+        suggestData={sugData}
+        result={result}
+        flag={flag}
+        register={register}
+        selectData={selectData}
       />
-      <Card round="rounded-xl" bgColor="bg-white">
-        <div className="text-center">
-          <Input />
-        </div>
-      </Card>
-      <Heading heading="おすすめ検索ワード" textSize="text-md" marginY="my-1" />
-      <Suggest />
-      {result ? (
-        flag ? (
-          <>
-            <BorderHeading
-              borderWeight="border-l-4"
-              borderColor="border-l-gray-600"
-              heading="最新情報"
-              textSize="text-xl"
-            />
-            <Result res={result.slice(0, 3)} />
-          </>
-        ) : (
-          <>
-            <BorderHeading
-              borderWeight="border-l-4"
-              borderColor="border-l-blue-500"
-              heading="検索結果"
-              textSize="text-xl"
-            />
-            <Result res={result} />
-          </>
-        )
-      ) : (
-        <Result res={[]} />
-      )}
     </Layout>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const keyword = context.query.keyword;
-  const sort = context.query.sort;
-  const order = context.query.order;
-  const acceptance = context.query.acceptance;
+  const acceptance = Number(context.query.acceptance);
   const industry = context.query.industry;
-  const employ = context.query.employ;
   let url: string;
   let initialFlag;
   if (keyword) {
