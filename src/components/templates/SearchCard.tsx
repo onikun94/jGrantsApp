@@ -46,6 +46,12 @@ export const SearchCard: React.FC<FormPropsType> = ({
               register={register('keyword')}
             />
             <SelectArea selectData={selectData} register={register} />
+            <TextInput
+              name="inputCheck"
+              labelName="対象期間"
+              inputType="checkbox"
+              register={register('restriction')}
+            />
             <Button name="検索" />
           </form>
         </div>
