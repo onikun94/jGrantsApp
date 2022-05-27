@@ -2,6 +2,7 @@ import emailjs from '@emailjs/browser';
 import Link from 'next/link';
 import React, { useRef, useState } from 'react';
 import { useRecoilValue } from 'recoil';
+
 import Layout from '../components/Layout';
 import { FormCard } from '../components/templates/FormCard';
 import { subsidyState } from '../recoil/atoms/subsidy';
@@ -49,7 +50,7 @@ const Form = () => {
   return (
     <Layout>
       <Link href="/">
-        <a className="m-2 w-1/6 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer">
+        <a className="py-1 px-4 m-2 w-1/6 font-medium text-center text-indigo-700 bg-transparent rounded-md border border-indigo-700 cursor-pointer">
           戻る
         </a>
       </Link>

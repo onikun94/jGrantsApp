@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { ButtonLink } from '../atoms/ButtonLink';
 import { Heading } from '../atoms/Heading';
 
@@ -18,7 +19,7 @@ export const ResultData: React.VFC<ResultDataPropsType> = ({
   buttonName,
 }) => {
   return (
-    <div className=" mb-8 p-8 ">
+    <div className=" p-8 mb-8 ">
       <Heading
         heading={title}
         textSize="text-xl"

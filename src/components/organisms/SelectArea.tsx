@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Selector } from '../molecules/Selector';
 
 export type SelectAreaPropsType = {

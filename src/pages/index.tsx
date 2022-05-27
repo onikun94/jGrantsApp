@@ -1,6 +1,7 @@
 import { GetServerSideProps, NextPage } from 'next';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+
 import { getData } from '../api/getData';
 import Layout from '../components/Layout';
 import { SearchPage } from '../components/templates/SearchPage';
@@ -23,7 +24,6 @@ const TopPage: NextPage<Props> = ({ result, flag }) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 

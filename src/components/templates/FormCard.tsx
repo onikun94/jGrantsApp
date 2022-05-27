@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Button } from '../atoms/Button';
 import Card, { bgColorType, roundType } from '../atoms/Card';
 import { TextAreaInput } from '../molecules/TextAreaInput';
@@ -19,7 +20,7 @@ export const FormCard: React.VFC<FormCardPropsType> = ({
   submit,
 }) => {
   return (
-    <div className="text-center m-2 p-4">
+    <div className="p-4 m-2 text-center">
       <form ref={refForm} onSubmit={submit}>
         <Card bgColor={bgColor} round={rList}>
           <TextData forms={forms} />

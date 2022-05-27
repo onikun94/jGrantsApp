@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Heading, HeadingPropsType } from '../atoms/Heading';
 
 const borderWeight = ['border-l-2', 'border-l-4', 'border-l-8'] as const;

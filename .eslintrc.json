@@ -9,15 +9,15 @@
   "extends": [
     "next/core-web-vitals",
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    // "plugin:@typescript-eslint/eslint-recommended",
+    // "plugin:@typescript-eslint/recommended",
+    // "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier",
     "plugin:tailwindcss/recommended"
   ],
   "plugins": ["@typescript-eslint", "import", "unused-imports", "tailwindcss"],
   "rules": {
-    "@typescript-eslint/no-unsafe-assignment": "off",
+    // "@typescript-eslint/no-unsafe-assignment": "off",
     // あった方が良さそうなルール
     "semi": "error",
     "no-console": "warn",

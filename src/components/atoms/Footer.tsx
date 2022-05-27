@@ -4,7 +4,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <>
-      <footer className=" flex mx-12 p-2   border-solid border-y-2  bg-white">
+      <footer className=" flex p-2 mx-12   bg-white border-y-2  border-solid">
         <Image src="/logo.png" width="64" height="64" objectFit="contain" />
         <div className="block ml-4">
           <p>EXPACT株式会社</p>

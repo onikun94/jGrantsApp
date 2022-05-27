@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useCallback } from 'react';
 import { useSetRecoilState } from 'recoil';
+
 import { getData } from '../../api/getData';
 import { subsidyState } from '../../recoil/atoms/subsidy';
 
@@ -16,15 +17,15 @@ const Detail = ({ detail }) => {
     setTitle(detail.result[0].title);
   }, []);
   return (
-    <div className=" mx-auto my-6 w-4/5">
+    <div className=" my-6 mx-auto w-4/5">
       <Link href="/">
-        <a className=" block m-2 w-1/6 py-1 px-4 text-center font-medium rounded-md text-indigo-700 bg-transparent border border-indigo-700 cursor-pointer">
+        <a className=" block py-1 px-4 m-2 w-1/6 font-medium text-center text-indigo-700 bg-transparent rounded-md border border-indigo-700 cursor-pointer">
           戻る
         </a>
       </Link>
       <h1 className="my-4">{detail.result[0].title}</h1>
       <p dangerouslySetInnerHTML={{ __html: detail.result[0].detail }}></p>
-      <div className="text-center m-2">
+      <div className="m-2 text-center">
         <Image src="/contact1.png" width="300" height="61" objectFit="contain" />
         <Link href="/form">
           <a onClick={handleTitle} className=" block m-2 cursor-pointer">

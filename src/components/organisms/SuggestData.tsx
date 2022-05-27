@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { handleInsertWord } from '../../lib/handler';
 import Card from '../atoms/Card';
 

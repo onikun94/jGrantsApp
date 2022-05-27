@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Input } from '../atoms/Input';
 import { Label } from '../atoms/Label';
 
@@ -21,7 +22,7 @@ export const TextInput: React.VFC<TextInputPropsType> = ({
   register,
 }) => {
   return register ? (
-    <div className="py-2  inline-block">
+    <div className="inline-block  py-2">
       <Input
         type={inputType}
         id={name}
