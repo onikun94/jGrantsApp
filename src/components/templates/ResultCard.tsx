@@ -22,7 +22,7 @@ const Result: React.VFC<resultPropsType> = ({ head, borderColor, res }) => {
       {res.map((result) => (
         <Card key={result.id} round="rounded-xl" bgColor="bg-white">
           <ResultData
-            title={result.title.length > 30 ? `${result.title.substring(0, 40)}...` : result.title}
+            title={result.title.length > 30 ? `${result.title.substring(0, 35)}...` : result.title}
             period={`募集期間：${result.acceptance_start_datetime.substring(
               0,
               10,
