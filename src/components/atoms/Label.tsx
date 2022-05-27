@@ -5,9 +5,5 @@ export type LabelPropsType = {
 };
 
 export const Label: React.FC<LabelPropsType> = ({ name }) => {
-  return (
-    <label className="m-2" htmlFor={name}>
-      {name}
-    </label>
-  );
+  return <label htmlFor={name}>{name}</label>;
 };
