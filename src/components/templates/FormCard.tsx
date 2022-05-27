@@ -20,7 +20,7 @@ export const FormCard: React.VFC<FormCardPropsType> = ({
   submit,
 }) => {
   return (
-    <div className="p-4 m-2 text-center">
+    <div className="p-4 mx-auto w-max text-center">
       <form ref={refForm} onSubmit={submit}>
         <Card bgColor={bgColor} round={rList}>
           <TextData forms={forms} />
