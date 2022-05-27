@@ -7,7 +7,7 @@ export type SelectorPropsType = {
 
 export const Selector: React.VFC<SelectorPropsType> = ({ selects, register }) => {
   return (
-    <select {...register}>
+    <select className=" w-48" {...register}>
       {selects.map((s) => (
         <option key={s.value} value={s.value}>
           {s.name}
