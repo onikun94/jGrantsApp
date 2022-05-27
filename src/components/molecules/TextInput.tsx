@@ -25,7 +25,6 @@ export const TextInput: React.VFC<TextInputPropsType> = ({
 }) => {
   return register ? (
     <div className="inline-block  py-2">
-      <Label name={labelName} />
       <Input
         type={inputType}
         id={name}
