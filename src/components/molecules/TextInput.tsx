@@ -5,6 +5,7 @@ import { Label } from '../atoms/Label';
 
 type TextInputPropsType = {
   name?: string;
+  labelName?: string;
   inputType: string;
   onChange?: () => void;
   value?: string;
@@ -14,6 +15,7 @@ type TextInputPropsType = {
 };
 export const TextInput: React.VFC<TextInputPropsType> = ({
   name,
+  labelName,
   inputType,
   onChange,
   value,
@@ -23,6 +25,7 @@ export const TextInput: React.VFC<TextInputPropsType> = ({
 }) => {
   return register ? (
     <div className="inline-block  py-2">
+      <Label name={labelName} />
       <Input
         type={inputType}
         id={name}
