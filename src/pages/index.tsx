@@ -7,7 +7,6 @@ import Layout from '../components/Layout';
 import { SearchPage } from '../components/templates/SearchPage';
 import indData from '../data/industry.json';
 import prefData from '../data/prefecture.json';
-import restData from '../data/restriction.json';
 import sugData from '../data/suggest.json';
 import { doHandleSubmit } from '../lib/handler';
 import { SubsidyType } from '../types/subsidy';
@@ -30,7 +29,7 @@ const TopPage: NextPage<Props> = ({ result, flag }) => {
   const selectData = [
     { key: 'ind', regName: 'industry', selectData: indData },
     { key: 'pre', regName: 'prefecture', selectData: prefData },
-    { key: 'rest', regName: 'restriction', selectData: restData },
+    // { key: 'rest', regName: 'restriction', selectData: restData },
   ];
   return (
     <Layout>
@@ -48,7 +47,8 @@ const TopPage: NextPage<Props> = ({ result, flag }) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const keyword = context.query.keyword;
-  const acceptance = Number(context.query.acceptance);
+  // const acceptance = Number(context.query.acceptance);
+  const acceptance = context.query.acceptnce ? 1 : 0;
   const industry = context.query.industry;
   let url: string;
   let initialFlag;
