@@ -56,9 +56,6 @@ const Form = () => {
         </a>
       </Link>
       <h1 className="m-2">お問い合わせ</h1>
-      <p>{serviceID}</p>
-      <p>{templateID}</p>
-      <p>{publicKey}</p>
       <FormCard
         refForm={form}
         submit={sendEmail}
