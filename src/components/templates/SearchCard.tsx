@@ -4,6 +4,7 @@ import { Button } from '../atoms/Button';
 import Card from '../atoms/Card';
 import { Heading } from '../atoms/Heading';
 import { BorderHeading } from '../molecules/BorderHeading';
+import { CheckBoxInput } from '../molecules/CheckBoxInput';
 import { TextInput } from '../molecules/TextInput';
 import { SelectArea } from '../organisms/SelectArea';
 import { suggest, SuggestData } from '../organisms/SuggestData';
@@ -46,10 +47,10 @@ export const SearchCard: React.FC<FormPropsType> = ({
               register={register('keyword')}
             />
             <SelectArea selectData={selectData} register={register} />
-            <TextInput
-              name="inputCheck"
+
+            <CheckBoxInput
               labelName="対象期間"
-              inputType="checkbox"
+              name="inputCheck"
               register={register('restriction')}
             />
             <Button name="検索" />
