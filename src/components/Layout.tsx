@@ -9,7 +9,7 @@ type LayoutPropsType = {
 
 const Layout: VFC<LayoutPropsType> = ({ children }) => {
   return (
-    <div className="flex flex-col px-12  pt-6 mx-auto w-max h-auto  min-h-screen ">
+    <div className="flex flex-col px-12  pt-6   min-h-screen ">
       <Header src="/expact1.png" width="192" height="50" />
       <main className="grow">{children}</main>
       <Footer />
