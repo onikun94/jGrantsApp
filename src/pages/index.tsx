@@ -1,7 +1,5 @@
 import { GetServerSideProps, NextPage } from 'next';
-import React from 'react';
 import { useForm } from 'react-hook-form';
-
 import { getData } from '../api/getData';
 import Layout from '../components/Layout';
 import { SearchPage } from '../components/templates/SearchPage';
@@ -29,10 +27,10 @@ const TopPage: NextPage<Props> = ({ result, flag }) => {
   const selectData = [
     { key: 'ind', regName: 'industry', selectData: indData },
     { key: 'pre', regName: 'prefecture', selectData: prefData },
-    // { key: 'rest', regName: 'restriction', selectData: restData },
   ];
   return (
     <Layout>
+      {/* <Suspense fallback={<Test />}> */}
       <SearchPage
         submit={handleSubmit(wrapSubmit)}
         suggestData={sugData}
@@ -41,13 +39,13 @@ const TopPage: NextPage<Props> = ({ result, flag }) => {
         register={register}
         selectData={selectData}
       />
+      {/* </Suspense> */}
     </Layout>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const keyword = context.query.keyword;
-  // const acceptance = Number(context.query.acceptance);
   const acceptance = context.query.acceptnce ? 1 : 0;
   const industry = context.query.industry;
   let url: string;

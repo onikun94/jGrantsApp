@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Button } from '../atoms/Button';
 import Card from '../atoms/Card';
 import { Heading } from '../atoms/Heading';
@@ -40,20 +39,27 @@ export const SearchCard: React.FC<FormPropsType> = ({
       <Card bgColor="bg-white" round="rounded-xl">
         <div className="p-4 mb-8">
           <form onSubmit={onSubmit}>
-            <TextInput
-              name="inputText"
-              inputType="text"
-              placeholder="検索語"
-              register={register('keyword')}
-            />
-            <SelectArea selectData={selectData} register={register} />
+            <div className=" inline-block">
+              <div>
+                <TextInput
+                  name="inputText"
+                  inputType="text"
+                  placeholder="検索語"
+                  register={register('keyword')}
+                />
+                <SelectArea selectData={selectData} register={register} />
 
-            <CheckBoxInput
-              labelName="対象期間"
-              name="inputCheck"
-              register={register('restriction')}
-            />
-            <Button name="検索" />
+                <CheckBoxInput
+                  labelName="対象期間"
+                  name="inputCheck"
+                  register={register('restriction')}
+                />
+              </div>
+
+              <div className=" text-center">
+                <Button name="検索" />
+              </div>
+            </div>
           </form>
         </div>
       </Card>

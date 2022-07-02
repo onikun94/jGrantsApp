@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { SubsidyType } from '../../types/subsidy';
 import Card from '../atoms/Card';
 import { borderColorType, BorderHeading } from '../molecules/BorderHeading';
@@ -27,7 +26,11 @@ const Result: React.VFC<resultPropsType> = ({ head, borderColor, res }) => {
               0,
               10,
             )}〜${result.acceptance_end_datetime.substring(0, 10)}`}
-            money={`補助金額上限：${result.subsidy_max_limit}円`}
+            money={
+              result.subsidy_max_limit !== null
+                ? `補助金額上限：${result.subsidy_max_limit.toLocaleString()}円`
+                : `補助金額上限：0円`
+            }
             buttonLink={`/contents/${result.id}`}
             buttonName="詳細"
           />

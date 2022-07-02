@@ -6,7 +6,7 @@ type ButtonPropsType = {
 
 export const Button: React.VFC<ButtonPropsType> = ({ name }) => {
   return (
-    <button className=" m-2" type="submit">
+    <button className=" m-2 " type="submit">
       {name}
     </button>
   );
