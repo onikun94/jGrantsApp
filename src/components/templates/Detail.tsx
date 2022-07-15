@@ -17,7 +17,7 @@ export const DetailResult: React.VFC<DetailResultPropsType> = ({ detail }) => {
   }, []);
   return (
     <div>
-      <h1 className="my-4">{detail.title}</h1>
+      <h1 className="my-4">{!detail.title}</h1>
       <p dangerouslySetInnerHTML={{ __html: detail.detail }}></p>
       <div className="m-2 text-center">
         <Image src="/contact1.png" width="300" height="61" objectFit="contain" />

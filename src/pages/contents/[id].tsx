@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const requestUrl = `https://api.jgrants-portal.go.jp/exp/v1/public/subsidies/id/${context.params.id}`;
   if (requestUrl) {
     const res = await getDataDetail(requestUrl);
-    console.log('res = ', res[0]);
+    console.log('res = ', res);
     return {
       props: { detail: res[0] },
       notFound: !res,
