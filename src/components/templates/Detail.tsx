@@ -13,12 +13,12 @@ type DetailResultPropsType = {
 export const DetailResult = ({ detail }) => {
   const setTitle = useSetRecoilState(subsidyState);
   const handleTitle = useCallback(() => {
-    setTitle(detail.title);
+    setTitle(detail?.title);
   }, []);
   return (
     <div>
-      <h1 className="my-4">{detail.title}</h1>
-      <p dangerouslySetInnerHTML={{ __html: detail.detail }}></p>
+      <h1 className="my-4">{detail?.title}</h1>
+      <p dangerouslySetInnerHTML={{ __html: detail?.detail }}></p>
       <div className="m-2 text-center">
         <Image src="/contact1.png" width="300" height="61" objectFit="contain" />
         <Link href="/form">
