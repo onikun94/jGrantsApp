@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+
 import { getDataDetail } from '../../api/getData';
 import { DetailResult } from '../../components/templates/Detail';
 

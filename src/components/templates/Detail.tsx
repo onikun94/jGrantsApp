@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useCallback } from 'react';
 import { useSetRecoilState } from 'recoil';
+
 import { subsidyState } from '../../recoil/atoms/subsidy';
 import { SubsidyDetailType } from '../../types/subsidy';
 

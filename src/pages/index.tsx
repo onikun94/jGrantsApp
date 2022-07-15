@@ -1,5 +1,6 @@
 import { GetServerSideProps, NextPage } from 'next';
 import { useForm } from 'react-hook-form';
+
 import { getData } from '../api/getData';
 import Layout from '../components/Layout';
 import { SearchPage } from '../components/templates/SearchPage';
