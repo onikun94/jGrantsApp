@@ -17,6 +17,7 @@ type SearchPagePropsType = {
     regName: string;
     selectData: { name: string; value: string | number }[];
   }[];
+  setValue: any;
 };
 
 export const SearchPage: React.FC<SearchPagePropsType> = ({
@@ -26,6 +27,7 @@ export const SearchPage: React.FC<SearchPagePropsType> = ({
   flag,
   register,
   selectData,
+  setValue,
 }) => {
   return (
     <>
@@ -37,6 +39,7 @@ export const SearchPage: React.FC<SearchPagePropsType> = ({
         recoHeading="おすすめ検索ワード"
         selectData={selectData}
         register={register}
+        setValue={setValue}
       />
       {result ? (
         flag ? (

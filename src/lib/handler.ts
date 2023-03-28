@@ -1,8 +1,7 @@
 import Router from 'next/router';
 
-export const handleInsertWord = (name: string) => {
-  const innerText = document.getElementById('inputText') as HTMLInputElement;
-  innerText.value = name;
+export const handleInsertWord = (name: string, registerName, setValue: any) => {
+  setValue(registerName, name);
 };
 
 export const doHandleSubmit = (data) => {
