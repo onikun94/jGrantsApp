@@ -19,7 +19,7 @@ export const ResultData: React.VFC<ResultDataPropsType> = ({
   buttonName,
 }) => {
   return (
-    <div className=" p-8 mb-8 ">
+    <div className=" mb-8 p-8 ">
       <Heading
         heading={title}
         textSize="text-xl"

@@ -22,13 +22,13 @@ export const SuggestData: React.VFC<SuggestDataPropsType> = ({
   return (
     <>
       {sgData.map((sg) => (
-        <div key={sg.Skey} className="inline-block  m-2 cursor-pointer">
+        <div key={sg.Skey} className="m-2  inline-block cursor-pointer">
           <Card
             round="rounded-md"
             bgColor="bg-white"
             handleChange={() => handleInsertWord(sg.SName, registerName, setValue)}
           >
-            <div className="py-2 px-4">{sg.SName}</div>
+            <div className="px-4 py-2">{sg.SName}</div>
           </Card>
         </div>
       ))}

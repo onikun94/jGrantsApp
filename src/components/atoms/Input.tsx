@@ -23,7 +23,7 @@ export const Input: React.VFC<InputPropsType> = ({
   return !register ? (
     onChange !== undefined ? (
       <input
-        className=" m-2 text-base font-normal  text-gray-700 focus:text-gray-700 bg-clip-padding bg-white focus:bg-white border border-gray-300 focus:border-blue-600 border-solid focus:outline-none transition ease-in-out"
+        className=" m-2 border border-solid  border-gray-300 bg-white bg-clip-padding text-base font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
         type={type}
         id={id}
         onChange={onChange}
@@ -33,7 +33,7 @@ export const Input: React.VFC<InputPropsType> = ({
     ) : (
       <>
         <input
-          className=" m-2 text-base font-normal  text-gray-700 focus:text-gray-700 bg-clip-padding bg-white focus:bg-white border border-gray-300 focus:border-blue-600 border-solid focus:outline-none transition ease-in-out"
+          className=" m-2 border border-solid  border-gray-300 bg-white bg-clip-padding text-base font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
           type={type}
           id={id}
           placeholder={placeholder}
@@ -44,7 +44,7 @@ export const Input: React.VFC<InputPropsType> = ({
     )
   ) : onChange !== undefined ? (
     <input
-      className="  m-2 text-base font-normal  text-gray-700 focus:text-gray-700 bg-clip-padding bg-white focus:bg-white border border-gray-300 focus:border-blue-600 border-solid focus:outline-none transition ease-in-out"
+      className="  m-2 border border-solid  border-gray-300 bg-white bg-clip-padding text-base font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
       type={type}
       id={id}
       onChange={onChange}
@@ -54,7 +54,7 @@ export const Input: React.VFC<InputPropsType> = ({
     />
   ) : (
     <input
-      className=" m-2 text-base font-normal text-gray-700 focus:text-gray-700 bg-clip-padding bg-white focus:bg-white border border-gray-300 focus:border-blue-600 border-solid focus:outline-none transition ease-in-out"
+      className=" m-2 border border-solid border-gray-300 bg-white bg-clip-padding text-base font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
       type={type}
       id={id}
       placeholder={placeholder}

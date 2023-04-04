@@ -51,7 +51,7 @@ const Form = () => {
   return (
     <Layout>
       <Link href="/">
-        <a className="py-1 px-4 m-2 w-1/6 font-medium text-center text-indigo-700 bg-transparent rounded-md border border-indigo-700 cursor-pointer">
+        <a className="m-2 w-1/6 cursor-pointer rounded-md border border-indigo-700 bg-transparent px-4 py-1 text-center font-medium text-indigo-700">
           戻る
         </a>
       </Link>

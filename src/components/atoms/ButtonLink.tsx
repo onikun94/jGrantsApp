@@ -10,7 +10,7 @@ export const ButtonLink: React.VFC<ButtonLinkPropsType> = ({ hrefLink, linkName 
   return (
     <div className="mx-4 mt-5">
       <Link href={hrefLink}>
-        <a className=" py-2 px-4 font-medium text-center text-indigo-700 bg-transparent rounded-md border border-indigo-700 cursor-pointer">
+        <a className=" cursor-pointer rounded-md border border-indigo-700 bg-transparent px-4 py-2 text-center font-medium text-indigo-700">
           {linkName}
         </a>
       </Link>

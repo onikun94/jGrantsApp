@@ -7,9 +7,9 @@ import { DetailResult } from '../../components/templates/Detail';
 const Detail = ({ detail }) => {
   return (
     <>
-      <div className=" my-6 mx-auto w-4/5">
+      <div className=" mx-auto my-6 w-4/5">
         <Link href="/">
-          <a className=" block py-1 px-4 m-2 w-1/6 font-medium text-center text-indigo-700 bg-transparent rounded-md border border-indigo-700 cursor-pointer">
+          <a className=" m-2 block w-1/6 cursor-pointer rounded-md border border-indigo-700 bg-transparent px-4 py-1 text-center font-medium text-indigo-700">
             戻る
           </a>
         </Link>

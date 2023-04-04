@@ -1,10 +1,10 @@
 import React from 'react';
 
+import ResultCard from './ResultCard';
+import { SearchCard } from './SearchCard';
 import { SubsidyType } from '../../types/subsidy';
 import { Heading } from '../atoms/Heading';
 import { suggest } from '../organisms/SuggestData';
-import ResultCard from './ResultCard';
-import { SearchCard } from './SearchCard';
 
 type SearchPagePropsType = {
   submit: () => any;

@@ -40,7 +40,7 @@ export const SearchCard: React.FC<FormPropsType> = ({
         textSize="text-xl"
       />
       <Card bgColor="bg-white" round="rounded-xl">
-        <div className="p-4 mb-8">
+        <div className="mb-8 p-4">
           <form onSubmit={onSubmit}>
             <div className=" inline-block">
               <div>

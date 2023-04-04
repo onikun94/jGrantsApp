@@ -22,7 +22,7 @@ export const DetailResult = ({ detail }) => {
       <div className="m-2 text-center">
         <Image src="/contact1.png" width="300" height="61" objectFit="contain" />
         <Link href="/form">
-          <a onClick={handleTitle} className=" block m-2 cursor-pointer">
+          <a onClick={handleTitle} className=" m-2 block cursor-pointer">
             <Image src="/contact2.png" width="205" height="44" objectFit="contain" />
           </a>
         </Link>
