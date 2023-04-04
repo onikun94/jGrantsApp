@@ -22,6 +22,7 @@ const TopPage: NextPage<Props> = ({ result, flag }) => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm();
 
@@ -38,6 +39,7 @@ const TopPage: NextPage<Props> = ({ result, flag }) => {
         result={result}
         flag={flag}
         register={register}
+        setValue={setValue}
         selectData={selectData}
       />
       {/* </Suspense> */}

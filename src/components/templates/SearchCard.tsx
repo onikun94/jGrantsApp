@@ -20,6 +20,7 @@ type FormPropsType = {
     selectData: { name: string; value: string | number }[];
   }[];
   register: any;
+  setValue: any;
 };
 export const SearchCard: React.FC<FormPropsType> = ({
   onSubmit,
@@ -28,6 +29,7 @@ export const SearchCard: React.FC<FormPropsType> = ({
   recoHeading,
   selectData,
   register,
+  setValue,
 }) => {
   return (
     <>
@@ -65,7 +67,7 @@ export const SearchCard: React.FC<FormPropsType> = ({
         </div>
       </Card>
       <Heading heading={recoHeading} textSize="text-md" marginY="my-1" />
-      <SuggestData sgData={SugData} />
+      <SuggestData sgData={SugData} registerName={'keyword'} setValue={setValue} />
     </>
   );
 };

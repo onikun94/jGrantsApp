@@ -10,9 +10,15 @@ export type suggest = {
 
 type SuggestDataPropsType = {
   sgData: suggest[];
+  registerName: string;
+  setValue: any;
 };
 
-export const SuggestData: React.VFC<SuggestDataPropsType> = ({ sgData }) => {
+export const SuggestData: React.VFC<SuggestDataPropsType> = ({
+  sgData,
+  registerName,
+  setValue,
+}) => {
   return (
     <>
       {sgData.map((sg) => (
@@ -20,7 +26,7 @@ export const SuggestData: React.VFC<SuggestDataPropsType> = ({ sgData }) => {
           <Card
             round="rounded-md"
             bgColor="bg-white"
-            handleChange={() => handleInsertWord(sg.SName)}
+            handleChange={() => handleInsertWord(sg.SName, registerName, setValue)}
           >
             <div className="py-2 px-4">{sg.SName}</div>
           </Card>
